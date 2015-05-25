@@ -3,8 +3,8 @@ MAINTAINER Giovanni De Gasperis  "giovanni@giodegas.it"
 
 RUN apt-get update && apt-get install -y redis-server
 
-ADD rc.local /etc/rc.local
-ADD OpenSim.ini /opt/opensim-0.8.1/bin/OpenSim.ini
+COPY rc.local /etc/rc.local
+COPY OpenSim.ini /opt/opensim-0.8.1/bin/OpenSim.ini
 
 RUN mv /etc/redis/redis.conf /etc/redis/redis.conf.org
 RUN sed s/"bind 127.0.0.1"/"bind 0.0.0.0"/ /etc/redis/redis.conf.org >/etc/redis/redis.conf
