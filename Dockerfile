@@ -6,7 +6,8 @@ RUN apt-get update && apt-get install -y redis-server
 ADD rc.local /etc/rc.local
 ADD OpenSim.ini /opt/opensim-0.8.1/bin/OpenSim.ini
 
-RUN sed s/"bind 127.0.0.1"/"bind 0.0.0.0"/ /etc/redis.conf >/etc/redis.conf
+RUN mv /etc/redis/redis.conf /etc/redis/redis.conf.org
+RUN sed s/"bind 127.0.0.1"/"bind 0.0.0.0"/ /etc/redis/redis.conf.org >/etc/redis/redis.conf
 
 # Redis
 EXPOSE 6379/tcp
