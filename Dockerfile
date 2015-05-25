@@ -4,7 +4,9 @@ MAINTAINER Giovanni De Gasperis  "giovanni@giodegas.it"
 RUN apt-get update && apt-get install -y redis-server
 
 ADD rc.local /etc/rc.local
-#ADD OpenSim.ini /opt/opensim-0.8.1/bin/.
+ADD OpenSim.ini /opt/opensim-0.8.1/bin/OpenSim.ini
+
+RUN sed s/"bind 127.0.0.1"/"bind 0.0.0.0"/ /etc/redis.conf >/etc/redis.conf
 
 # Redis
 EXPOSE 6379/tcp
