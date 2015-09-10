@@ -1,10 +1,10 @@
 FROM quantumobject/docker-opensimulator
 MAINTAINER Giovanni De Gasperis  @giodegas
 
-RUN apt-get update && apt-get install -y redis-server
+RUN apt-get update && apt-get install -y redis-server tcpdump vim
 
 COPY rc.local /etc/rc.local
-COPY OpenSim.ini /opt/opensim-0.8.1/bin/OpenSim.ini
+COPY OpenSim.ini /opt/opensim/bin/OpenSim.ini
 
 RUN mv /etc/redis/redis.conf /etc/redis/redis.conf.org
 RUN sed s/"bind 127.0.0.1"/"bind 0.0.0.0"/ /etc/redis/redis.conf.org >/etc/redis/redis.conf
