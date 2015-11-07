@@ -1,9 +1,9 @@
 FROM quantumobject/docker-opensimulator
 MAINTAINER Giovanni De Gasperis  @giodegas
 
-RUN apt-get update && apt-get install -y redis-server tcpdump vim
+RUN apt-get update && apt-get install -y redis-server tcpdump netcat vim
 
-COPY rc.local /etc/rc.local
+#COPY rc.local /etc/rc.local
 COPY OpenSim.ini /opt/opensim/bin/OpenSim.ini
 
 RUN mv /etc/redis/redis.conf /etc/redis/redis.conf.org
@@ -19,5 +19,5 @@ EXPOSE 6379/tcp
 
 # Opensimulator
 EXPOSE 9000/tcp
-EXPOSE 9000/udp
+EXPOSE 9001/udp
 
