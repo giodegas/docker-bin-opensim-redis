@@ -1,7 +1,7 @@
 FROM quantumobject/docker-opensimulator
 MAINTAINER Giovanni De Gasperis  @giodegas
 
-RUN apt-get update && apt-get install -y redis-server tcpdump netcat vim
+RUN apt-get update && apt-get install -y redis-server tcpdump net-tools netcat vim
 
 #COPY rc.local /etc/rc.local
 COPY OpenSim.ini /opt/opensim/bin/OpenSim.ini
@@ -19,5 +19,5 @@ EXPOSE 6379/tcp
 
 # Opensimulator
 EXPOSE 9000/tcp
-EXPOSE 9001/udp
+EXPOSE 9000/udp
 
