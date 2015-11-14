@@ -26,4 +26,4 @@ with a proper LOGIN URI configuration:
     login URL ==> http://<external_ip>:9000
 
 ## More
-To help improve this docker container image : [giodegas/opensim/bin/redis](http://github.com/giodegas/opensim/bin/redis)
+To help improve this docker container image : [giodegas/docker-bin-opensim-redis](http://github.com/giodegas/bin-opensim-redis)
