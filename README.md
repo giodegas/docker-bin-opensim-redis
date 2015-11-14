@@ -16,6 +16,7 @@ Docker image derived from [docker-opensimulator](http://github.com/QuantumObject
 
 A 3D compatible viewer is needed to login to the virtual world with your avatar to meet and interact with the NPCs:
 
+* [Firestorm](http://www.firestormviewer.org)
 * [Kokua](http://wiki.kokuaviewer.org/wiki/Kokua/Downloads) 
 * [Singularity](http://www.singularityviewer.org/) 
 
@@ -25,4 +26,4 @@ with a proper LOGIN URI configuration:
     login URL ==> http://<external_ip>:9000
 
 ## More
-To help improve this docker container image : [giodegas/docker-bin-opensim-redis](http://github.com/giodegas/bin-opensim-redis)
+To help improve this docker container image : [giodegas/opensim/bin/redis](http://github.com/giodegas/opensim/bin/redis)
